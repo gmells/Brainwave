@@ -31,14 +31,16 @@ const Header = () => {
   return (
     <div
       className={`fixed top-0 left-0 w-full z-50 lg:bg-n-8/90 
-      lg:backdrop:blur-sm border-b border-n-6 ${open} `}
+      lg:backdrop:blur-sm border-b border-n-6 ${
+        openNavigation ? "bg-n-8" : "bg-n-8/90 backdrop-blur-sm"
+      } `}
     >
       <div
         className="flex items-center px-5 lg:px-7.5 
       xl:px-10 max-lg:py-4"
       >
         <a className="block w-[12rem] xl:mr-8" href="#hero">
-          <img src={brainwave} width={190} height={40} alt="brainwave" />
+          <img src={brainwave} width={190} height={40} alt="Brainwave" />
         </a>
 
         <nav
@@ -49,7 +51,7 @@ const Header = () => {
         >
           <div
             className="relative z-2 flex flex-col items-center 
-          justify-center lg:flex-row"
+            justify-center lg:flex-row m-auto"
           >
             {navigation.map((item) => (
               <a
@@ -65,8 +67,7 @@ const Header = () => {
                 item.url === pathname.hash
                   ? "z-2 lg:text-n-1"
                   : "lg:text-n-1/50"
-              } lg:leading-5 lg:hover:text-n-1
-              xl:px-12`}
+              } lg:leading-5 lg:hover:text-n-1 xl:px-12`}
               >
                 {item.title}
               </a>
@@ -89,7 +90,7 @@ const Header = () => {
         <Button
           className="ml-auto lg:hidden"
           px="px-3"
-          onclick={toggleNavigation}
+          onClick={toggleNavigation}
         >
           <MenuSvg openNavigation={openNavigation} />
         </Button>
