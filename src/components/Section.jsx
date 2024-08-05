@@ -4,18 +4,25 @@ const Section = ({
   className,
   id,
   crosses,
-  crossesOfset,
+  crossesOffset,
   customPaddings,
   children,
 }) => {
   return (
     <div
       id={id}
-      className={` relative ${
-        customPaddings ||
-        `py-10 lg:py-16 xl:py-20
-        ${crosses ? `lg:py-32 xl:py-40` : ""} ${className || ""}`
-      }`}
+      className={`
+       relative 
+       ${
+         customPaddings ||
+         `py-10 lg:py-16 xl:py-20 ${
+           crosses
+             ? `lg:py-32 
+         xl:py-40`
+             : ""
+         }`
+       }
+        ${className || ""}`}
     >
       {children}
 
@@ -33,12 +40,12 @@ const Section = ({
           <div
             className={`hidden absolute top-0 left-7.5 right-7.5 bg-stroke-1
                 ${
-                  crossesOfset && crossesOfset
+                  crossesOffset && crossesOffset
                 } pointer-events-none lg:block xl:left-10
                 right-10 `}
           />
 
-          <SectionSvg crossesOffset={crossesOfset} />
+          <SectionSvg crossesOffset={crossesOffset} />
         </>
       )}
     </div>
