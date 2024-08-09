@@ -2,6 +2,7 @@ import { benefits } from "../constants";
 import Heading from "./Heading";
 import Section from "./Section";
 import Arrow from "../assets/svg/Arrow";
+import { GradientLight } from "./design/Benefits";
 
 const Benefits = () => {
   return (
@@ -9,7 +10,7 @@ const Benefits = () => {
       <div className="container relative z-2">
         <Heading
           className="md:max-w-md lg:max-w-2xl"
-          title="Chat smarter not Harder with Brainwave"
+          title="Chat Smarter Not Harder with Brainwave"
         />
 
         <div className="flex flex-wrap gap-10 mb-10">
@@ -35,6 +36,10 @@ const Benefits = () => {
                   <Arrow />
                 </div>
               </div>
+
+              {item.light && <GradientLight />}
+
+              <div className="absolute inset-0.5 bg-n-8" style={{ clipPath: }}></div>
             </div>
           ))}
         </div>
