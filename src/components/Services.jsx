@@ -5,9 +5,9 @@ import Heading from "./Heading";
 import Section from "./Section";
 import {
   PhotoChatMessage,
-  Gradient,
-  VideoBar,
-  VideoChatMessage,
+  // Gradient,
+  // VideoBar,
+  // VideoChatMessage,
 } from "./design/Services";
 
 const Services = () => {
